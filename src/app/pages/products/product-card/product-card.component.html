@@ -1,6 +1,6 @@
-<div class="card" style="width: 18rem;">
+<div class="card m-3" style="width: 18rem; float:left;">
   @if (product.img) {
-  <img [src]="product.img" class="card-img-top" alt="photo">
+  <img src="{{product.img}}" class="card-img-top" alt="photo">
   }@else {
 
   <img src="https://picsum.photos/200/200" class="card-img-top" alt="photo">
@@ -26,10 +26,15 @@
 
     <li class="list-group-item">pas de détails disponibles</li>
     }
-
+    @if (product.real) {
+    <a routerLink="/products/films/{{product.id}}" class="btn btn-primary">voir</a>
+    }@else {
+    <a routerLink="/products/albums/{{product.id}}" class="btn btn-primary">voir</a>
+    }
 
   </ul>
 
-</div>
 
-<button type="submit">delete</button>
+
+  <button type="submit" (click)="onSubmit()">delete</button>
+</div>

@@ -1,0 +1,22 @@
+@if (item) {
+<div style="text-align:center;">
+
+
+  <p>{{item.nom}}</p>
+  <p>{{item.id}}</p>
+  <p>{{item.annee}}</p>
+  @if (item.img) {
+  <img src="{{item.img}}" alt="photo">
+  }@else {
+
+  <img src="https://picsum.photos/200/200" alt="photo">
+  }
+
+  @if (item.real) {
+  <p>{{item.real}}</p>
+  }@else {
+  <p>{{item.artiste}}</p>
+  }
+
+</div>
+}
