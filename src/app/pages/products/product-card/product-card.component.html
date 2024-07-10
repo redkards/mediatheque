@@ -1,0 +1,35 @@
+<div class="card" style="width: 18rem;">
+  @if (product.img) {
+  <img [src]="product.img" class="card-img-top" alt="photo">
+  }@else {
+
+  <img src="https://picsum.photos/200/200" class="card-img-top" alt="photo">
+  }
+  <div class="card-body">
+    <h5 class="card-title">nom : {{product.nom}}</h5>
+    <p class="card-text">{{product.synopsis}}
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    @if (product.real) {
+    <li class="list-group-item">{{product.real}}</li>
+    }@else {
+    <li class="list-group-item">{{product.artiste}}</li>
+    }
+
+    <li class="list-group-item">année : {{product.annee}}</li>
+
+    @if (product.details) {
+
+    <li class="list-group-item">details : {{product.details}}</li>
+    }@else {
+
+    <li class="list-group-item">pas de détails disponibles</li>
+    }
+
+
+  </ul>
+
+</div>
+
+<button type="submit">delete</button>
